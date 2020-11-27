@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#317EFB" />
     <link rel="shortcut icon" href="icons/icon-192x192.png" type="image/x-icon" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -17,30 +22,39 @@
     <title>Budget Tracker</title>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="total">
-        <div class="total">Your total is: $<span id="total">0</span></div>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#"> Pushpi Corps.</a>
+    </nav>
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="row p-3 rounded shadow">
+        <nav class="navbar navbar-dark bg-light w-100">
+          <div class="form-inline">
+            <input
+              type="text"
+              id="t-name"
+              placeholder="Name of transaction"
+              class="form-control m-2"
+            />
+            <input
+              type="number"
+              min="0"
+              id="t-amount"
+              placeholder="Transaction amount"
+              class="form-control m-2"
+            />
+            <button id="add-btn" class="btn btn-success m-2">
+              <i class="fa fa-plus buttons"></i> Add Funds
+            </button>
+            <button id="sub-btn" class="btn btn-danger m-2">
+              <i class="fa fa-minus"></i> Subtract Funds
+            </button>
+            <p class="error"></p>
+          </div>
+          <span class="btn btn-primary">Total : $<span id="total">0</span></span>
+        </nav>
+        <ul class="list-group w-100" id="tbody"></ul>
+        <canvas id="myChart" style="scale: 50%"></canvas>
       </div>
-
-      <div class="form">
-        <input type="text" id="t-name" placeholder="Name of transaction" />
-        <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-        <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
-        <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
-        <p class="error"></p>
-      </div>
-
-      <div class="transactions">
-        <table>
-          <thead>
-            <th>Transaction</th>
-            <th>Amount</th>
-          </thead>
-          <tbody id="tbody"></tbody>
-        </table>
-      </div>
-
-      <canvas id="myChart"></canvas>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>

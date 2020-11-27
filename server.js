@@ -10,7 +10,9 @@ const app = express();
 app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors({ origin: ["http://127.0.0.1:5500", "http://127.0.0.1:5501"] }));
+app.use(
+  cors({ origin: ["http://127.0.0.1:5500", "http://127.0.0.1:5501", "http://127.0.0.1:5502"] })
+);
 
 app.use(express.static("public"));
 

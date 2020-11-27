@@ -7,7 +7,7 @@ fetch("http://localhost:3000/api/transaction", { mode: "cors" })
   .then((response) => {
     return response.json();
   })
-  .then((data) => {    
+  .then((data) => {
     transactions = data;
 
     populateTotal();
@@ -31,10 +31,15 @@ function populateTable() {
 
   transactions.forEach((transaction) => {
     // create and populate a table row
-    let tr = document.createElement("tr");
+    let tr = document.createElement("div");
     tr.innerHTML = `
-      <td>${transaction.name}</td>
-      <td>${transaction.value}</td>
+      <li id="" class="list-group-item w-100 d-flex justify-content-between align-items-center">
+      
+      <span>${transaction.name}</span>
+      <span>${transaction.value}</span>
+      
+      </li>
+      
     `;
 
     tbody.appendChild(tr);
@@ -181,4 +186,3 @@ if ("serviceWorker" in navigator) {
 } else {
   console.log("PWA is not supported on this browser.");
 }
-
