@@ -154,11 +154,11 @@ function sendTransaction(isAdding) {
     });
 }
 
-document.querySelector("#add-btn").onclick = function () {
+document.getElementById("add-btn").onclick = function () {
   sendTransaction(true);
 };
 
-document.querySelector("#sub-btn").onclick = function () {
+document.getElementById("sub-btn").onclick = function () {
   sendTransaction(false);
 };
 

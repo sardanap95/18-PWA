@@ -28,7 +28,7 @@
     <div class="container d-flex justify-content-center align-items-center">
       <div class="row p-3 rounded shadow">
         <nav class="navbar navbar-dark bg-light w-100">
-          <div class="form-inline">
+          <div class="form form-inline">
             <input
               type="text"
               id="t-name"
@@ -49,8 +49,8 @@
               <i class="fa fa-minus"></i> Subtract Funds
             </button>
             <p class="error"></p>
+            <span class="btn btn-primary">Total : $<span id="total">0</span></span>
           </div>
-          <span class="btn btn-primary">Total : $<span id="total">0</span></span>
         </nav>
         <ul class="list-group w-100" id="tbody"></ul>
         <canvas id="myChart" style="scale: 50%"></canvas>
