@@ -3,7 +3,7 @@ let myChart;
 
 //Transactions.
 
-fetch("http://localhost:3000/api/transaction", { mode: "cors" })
+fetch("/api/transaction", { mode: "cors" })
   .then((response) => {
     return response.json();
   })
@@ -122,7 +122,7 @@ function sendTransaction(isAdding) {
   navigator.serviceWorker.controller.postMessage(transaction); // <--- This line right here sends our data to sw.js
 
   // also send to server
-  fetch("http://localhost:3000/api/transaction", {
+  fetch("/api/transaction", {
     mode: "cors",
     method: "POST",
     body: JSON.stringify(transaction),
